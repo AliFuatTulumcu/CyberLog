@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        .log-entry {
+            margin-bottom: 1em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dashboard</h1>
+    <a href="{{ url_for('logout') }}">Logout</a>
+    <h2>Logs</h2>
+    <ul>
+        {% for log in logs %}
+        <li class="log-entry">Event: {{ log.event }}<br>Timestamp: {{ log.timestamp }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
